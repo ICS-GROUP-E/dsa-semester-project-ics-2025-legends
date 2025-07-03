@@ -1,0 +1,4 @@
+CREATE TABLE IF NOT EXISTS courses (
+    course_name TEXT PRIMARY KEY,
+    prerequisites TEXT -- Comma-separated list of course names
+);

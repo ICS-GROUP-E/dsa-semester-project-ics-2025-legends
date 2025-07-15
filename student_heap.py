@@ -9,7 +9,12 @@ class StudentHeap:
         heapq.heappush(self.heap, (-student.gpa, student))
 
     def get_top_students(self, n=5):
-        return [student for _, student in sorted(self.heap, reverse=True)[:n]]
+        top = heapq.nsmallest(n, self.heap)
+        students = [student for _, student in top]
+        students.sort(key=lambda s: s.gpa, reverse=True)
+        return students
+    # def get_top_students(self, n=5):
+    #     return [student for _, student in sorted(self.heap, reverse=True)[:n]]
     
 
 if __name__ == "__main__":
